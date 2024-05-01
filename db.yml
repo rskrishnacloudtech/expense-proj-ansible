@@ -4,7 +4,7 @@
   become: yes
   vars:
     mysql_host: 172.31.21.160
-    mysql_root_password: ExpenseApp@1
+    mysql_root_password: "ExpenseApp@1"
   tasks:
   - name: Installing the mysql server.
     ansible.builtin.dnf:
@@ -29,8 +29,8 @@
   - name: Check that mysql root password is alredy set or by trying to login to mysql.
     community.mysql.mysql_info:
       login_user: root
-      login_password: {{mysql_root_password}}
-      login_host: {{mysql_host}}
+      login_password: "{{ mysql_root_password }}"
+      login_host: "{{mysql_host}}"
       filter: version
     ignore_errors: yes
     register: mysql_connection_output
