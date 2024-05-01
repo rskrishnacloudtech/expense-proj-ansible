@@ -18,7 +18,7 @@
 
   # Removing the default application content from /usr/share/nginx/html/. We are deleting the entire html directory as we dont have a module to delete all the files inside a directory.. Need to google about it once later.
   - name: Remove the default application content from /usr/share/nginx/html/.
-    ansible.builin.file:
+    ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent 
 
