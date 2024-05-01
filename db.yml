@@ -3,7 +3,7 @@
   hosts: db
   become: yes
   vars:
-    mysql_host: DB_Server_IP_Address
+    mysql_host: 172.31.21.160
     mysql_root_password: ExpenseApp@1
   tasks:
   - name: Installing the mysql server.

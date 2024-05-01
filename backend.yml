@@ -3,7 +3,8 @@
   hosts: backend
   become: yes
   vars:
-
+    login_host: 172.31.21.160
+    login_password: ExpenseApp@1
   tasks:
     # Disable the default nodejs package. Since we dont have any module in ansible to disable or enable any package we are using the command module.
     - name: Disable default nodejs package.
