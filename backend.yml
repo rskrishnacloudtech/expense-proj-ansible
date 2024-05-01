@@ -34,7 +34,7 @@
     # Downloading the application from url.
     - name: Download the application from url.
       ansible.builtin.get_url:
-        url:
+        url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
         dest: /tmp/backend.zip
 
     # Unzipping the backend code which is already in remote server. hence, we are using remote_src: yes.
