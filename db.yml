@@ -6,24 +6,26 @@
     mysql_host: 172.31.21.160
     mysql_root_password: "ExpenseApp@1"
   tasks:
-  - name: Installing the mysql server.
+  # Installing mysql server.
+  - name: Instal  mysql server.
     ansible.builtin.dnf:
       name: mysql-server
       state: latest
 
-  - name: Startig and enabling mysqld service.
+  # Starting and enabling the mysqld service.
+  - name: Start and enabling mysqld service.
     ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
 
   # Since ansible is developed in python we need to installt he python related mysql dependencies 
-  - name: Installing python mysql dependencies.
+  - name: Instal python mysql dependencies.
     ansible.builtin.pip:
       name:
       - PyMySQL
       - crypthography
-    executable: pip3.9  # This version will be selected based ont he python version used in ansible.
+      executable: pip3.9  # This version will be selected based ont he python version used in ansible.
 
   # Checking mysql password is laredy setup or not.
   - name: Check that mysql root password is alredy set or by trying to login to mysql.
