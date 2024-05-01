@@ -66,8 +66,8 @@
     - name: Import the mysql schema in to the DB.
       communit.mysql.mysql_db:
         login_user: root
-        login_password: {{login_password}}
-        login_host: {{login_host}}
+        login_password: "{{login_password}}"
+        login_host: "{{login_host}}"
         target: /etc/schema/backend.sql
         state: dump
         name: all
