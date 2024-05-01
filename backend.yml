@@ -51,7 +51,7 @@
         chdir: /app
 
     # Creating backend.service file and configure the DB host details in the file. and copy that file to /etc/systemd/system/ directory.
-    - name: Copying the backend.service file to /etc/systemd/sysyem/
+    - name: Copying the backend.service file to /etc/systemd/system/
       ansible.builtin.copy:
         src: backend.service
         dest: /etc/systemd/system/backend.service
@@ -61,6 +61,14 @@
       ansible.builtin.dnf:
         name: mysql
         state: latest
+
+    # Since ansible is developed in python we need to installt he python related mysql dependencies 
+    - name: Instal python mysql dependencies.
+      ansible.builtin.pip:
+        name:
+        - PyMySQL
+        - cryptography
+        executable: pip3.9  # This version will be selected based ont he python version used in ansible.
 
     # Importing the mysql schema in the DB.
     - name: Import the mysql schema in to the DB.
