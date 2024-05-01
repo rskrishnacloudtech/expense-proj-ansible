@@ -18,7 +18,7 @@
     - name: Install the nodejs applicatioin.
       ansible.builtin.dnf:
         name: nodejs
-        state: installed
+        state: latest
 
     # Creating a expense user if its not exists already.
     - name: Create expense user.
@@ -77,7 +77,7 @@
         login_password: "{{login_password}}"
         login_host: "{{login_host}}"
         target: /app/schema/backend.sql
-        state: dump
+        state: import
         name: all
         
     # Reloading the daemon service.
