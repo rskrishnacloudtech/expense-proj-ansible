@@ -31,7 +31,7 @@
   # Downloading and Extracting the fronend code into /usr/share/nginx/html.
   - name: Download and extract the frontend code into /usr/share/nginx/html path.
     ansible.builtin.unarchive:
-      src:
+      src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /usr/share/nginx/html
       remote_src: yes
 
