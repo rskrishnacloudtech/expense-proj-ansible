@@ -64,7 +64,7 @@
 
     # Importing the mysql schema in the DB.
     - name: Import the mysql schema in to the DB.
-      communit.mysql.mysql_db:
+      community.mysql.mysql_db:
         login_user: root
         login_password: "{{login_password}}"
         login_host: "{{login_host}}"
